@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>checkbox</title>
+
+<script type="text/javascript">
+function remove() {
+var aObj=document.getElementsByTagName('table')[1].getElementsByTagName('tr');
+console.log(aObj);
+var i=aObj.length; 
+var unchecked = [];
+while(i--) {
+	var box =aObj[i].getElementsByTagName('input')[0]; 
+    console.log(box);
+    if(box.checked) {
+       console.log(aObj[i].parentNode.removeChild(aObj[i])) ;
+        }
+    else {
+        unchecked.push(box.value);
+        }
+	}
+
+}
+</script>
+<body>
+    <table>
+        <tr><th>company</th><th>model</th><th>price</th><th>memory</th><th>check</th></tr>
+    </table>
+    <table>
+        <!-- <tr><th>company</th><th>model</th><th>price</th><th>memory</th><th>select</th></tr> -->
+   
+        <tr><td>samsung </td><td>galaxy</td><td>5000</td><td>32</td><td><input type="checkbox" value="s"></td></tr>
+        <tr><td>nokia </td><td>s12y</td><td>7000</td><td>64</td><td><input type="checkbox" value="s"></td></tr>
+        <tr><td>xiaomi </td><td>x3</td><td>8000</td><td>32</td><td><input type="checkbox" value="s"></td></tr>
+        <tr><td>apple </td><td>s12</td><td>9000</td><td>64</td><td><input type="checkbox" value="s"></td></tr>
+        <tr><td>motorola </td><td>g10</td><td>7000</td><td>128</td><td><input type="checkbox" value="s"></td></tr>
+       
+    
+      
+    </table>
+    <button type="button" onclick="remove();">Delete</button>
+    </body>
+    </html>
+    
